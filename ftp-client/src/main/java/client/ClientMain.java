@@ -17,8 +17,6 @@ public class ClientMain {
     public static void main(String[] args) {
         try (BufferedReader reader = new BufferedReader(new InputStreamReader(System.in))) {
             System.out.println("Enter IP of the FTP Server: ");
-
-
             String ip = reader.readLine();
             System.out.println("Enter username: ");
             String username = reader.readLine();
@@ -26,8 +24,6 @@ public class ClientMain {
             String password = reader.readLine();
             ftpClient = new FtpClient(ip, username, password);
             ftpClient.open();
-
-
             boolean exitFlag = false;
             while (!exitFlag) {
                 System.out.println("\nChoose operation: ");
@@ -156,6 +152,4 @@ public class ClientMain {
         Path filePath = Paths.get(pathToStudentsFileOnLocal);
         return Files.readAllLines(filePath).stream().reduce((s, s2) -> s + s2).get();
     }
-
-
 }
