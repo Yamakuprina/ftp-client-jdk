@@ -1,3 +1,5 @@
+package client;
+
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -9,7 +11,8 @@ public class Config {
 
     static {
         try {
-            InputStream input = new FileInputStream("src/main/resources/config.properties");
+            //InputStream input = new FileInputStream("src/main/resources/config.properties");
+            InputStream input = Config.class.getResourceAsStream("/config.properties");
             prop.load(input);
         } catch (IOException e) {
             e.printStackTrace();

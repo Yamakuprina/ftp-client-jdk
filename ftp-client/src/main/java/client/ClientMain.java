@@ -1,3 +1,5 @@
+package client;
+
 import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -6,7 +8,7 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class Main {
+public class ClientMain {
     private static final String pathToStudentsFileOnFtpServer = Config.getProperty("server.pathToStudentsFile");
     private static final String pathToStudentsFileOnLocal = Config.getProperty("client.pathToStudentsFile");
     private static final CustomJSONParser parser = new CustomJSONParser();
