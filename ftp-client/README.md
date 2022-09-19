@@ -2,8 +2,9 @@
 
 ### About
 
-This is a simple FTP protocol client build completely on Sockets without any non-JDK libraries, except "maven-jar-plugin". It could be removed too, but in this case every build will require manual setting.
-It is used to send and receive file with the information about students.
+This is a simple FTP protocol client built completely on Sockets without any non-JDK libraries, except "maven-jar-plugin"
+(it can be removed too, but in this case every build will require manual setting).
+Ftp-client is used to send and receive file with the information about students.
 
 ### Usage
 0) First of all, you need to modify the config.properties file to your needs. It stores 4 variables this app will use:
