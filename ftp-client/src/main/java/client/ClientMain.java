@@ -97,7 +97,7 @@ public class ClientMain {
                         students = parser.parseFromJsonString(studentsJson);
                         int studentsBeforeDeleteCount = students.size();
                         students = students.stream().filter(s -> s.getId() != deleteId).collect(Collectors.toList());
-                        if (students.size()==studentsBeforeDeleteCount){
+                        if (students.size() == studentsBeforeDeleteCount) {
                             System.out.println("Not found");
                             continue;
                         }

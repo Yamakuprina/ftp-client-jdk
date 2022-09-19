@@ -113,9 +113,6 @@ class FtpClient {
         while ((line = dataSocketReader.readLine()) != null) {
             fileContents.append(line);
         }
-        //OutputStream out = getClass().getResourceAsStream(saveDestination);
-        //OutputStream out = getClass().getResource(saveDestination);
-        //
         FileOutputStream out = new FileOutputStream(saveDestination);
         out.write(fileContents.toString().getBytes());
         out.close();
