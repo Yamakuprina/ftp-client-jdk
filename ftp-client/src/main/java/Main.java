@@ -17,13 +17,13 @@ public class Main {
             System.out.println("Enter IP of the FTP Server: ");
 
 
-            String ip = "0.0.0.0"; //br.readLine();
+            String ip = reader.readLine();
             System.out.println("Enter username: ");
-            String username = "user"; //br.readLine();
+            String username = reader.readLine();
             System.out.println("Enter password: ");
-            String password = "123"; //br.readLine();
+            String password = reader.readLine();
             ftpClient = new FtpClient(ip, username, password);
-            ftpClient.open(); //0.0.0.0 user
+            ftpClient.open();
 
 
             boolean exitFlag = false;
