@@ -95,7 +95,12 @@ public class ClientMain {
                         int deleteId = Integer.parseInt(idLine);
                         studentsJson = downloadAndReadStudentsFile();
                         students = parser.parseFromJsonString(studentsJson);
+                        int studentsBeforeDeleteCount = students.size();
                         students = students.stream().filter(s -> s.getId() != deleteId).collect(Collectors.toList());
+                        if (students.size()==studentsBeforeDeleteCount){
+                            System.out.println("Not found");
+                            continue;
+                        }
                         studentsJsonNew = parser.parseToJsonString(students);
                         try (BufferedWriter writer = new BufferedWriter(new FileWriter(pathToStudentsFileOnLocal, false))) {
                             writer.write(studentsJsonNew);
