@@ -2,8 +2,10 @@ import javax.script.ScriptEngine;
 import javax.script.ScriptEngineManager;
 import javax.script.ScriptException;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 public class CustomJSONParser {
     private final ScriptEngine engine;
@@ -27,6 +29,8 @@ public class CustomJSONParser {
     }
 
     public String parseToJsonString(List<Student> list) {
+        list = list.stream().sorted(Comparator.comparing(Student::getName))
+                .collect(Collectors.toList());
         StringBuilder stringBuilder = new StringBuilder("{\"students\" : [");
         for (int i = 0; i < list.size(); i++) {
             stringBuilder.append("{ \"id\" : " + list.get(i).getId() + ", ");
