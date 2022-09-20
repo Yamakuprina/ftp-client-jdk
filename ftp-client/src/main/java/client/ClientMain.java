@@ -35,6 +35,7 @@ public class ClientMain {
                 System.out.println("6. Get all students");
                 System.out.println("7. Quit");
                 String reply = reader.readLine();
+                if (reply == null) continue;
                 switch (reply) {
                     case "1":
                         System.out.println("Enter Name: ");
