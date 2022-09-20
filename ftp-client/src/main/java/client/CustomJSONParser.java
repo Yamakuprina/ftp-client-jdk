@@ -21,9 +21,9 @@ public class CustomJSONParser {
         String script = "Java.asJSONCompatible(" + jsonString + ")";
         Object result = this.engine.eval(script);
         Map contents = (Map) result;
-        if (contents==null) return null;
+        if (contents == null) return null;
         List<?> studentsObjects = (List) contents.get("students");
-        if (studentsObjects==null) return null;
+        if (studentsObjects == null) return null;
         List<Student> students = new ArrayList<>();
         for (int i = 0; i < studentsObjects.size(); i++) {
             Map studentMap = (Map) studentsObjects.get(i);
