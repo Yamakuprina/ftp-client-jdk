@@ -5,7 +5,7 @@ import java.net.ServerSocket;
 import java.net.Socket;
 import java.nio.charset.StandardCharsets;
 
-class FtpClient {
+public class FtpClient {
 
     private final String serverIp;
     private final int controlPort = Integer.parseInt(Config.getProperty("server.controlPort"));
